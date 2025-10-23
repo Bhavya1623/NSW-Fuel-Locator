@@ -4,8 +4,10 @@ from uuid import uuid4
 from datetime import datetime
 import streamlit as st
 import plotly.express as px
+from streamlit_autorefresh import st_autorefresh
 
 st.set_page_config(page_title="NSW Fuel Prices", layout="wide")
+st_autorefresh(interval=600_000, key="fuel_refresh")
 
 url = "https://api.onegov.nsw.gov.au/oauth/client_credential/accesstoken"
 
